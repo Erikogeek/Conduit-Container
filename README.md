@@ -4,9 +4,9 @@ This project containerizes a full-stack web application consisting of a `Django 
 The goal of this project is to provide a reproducible containerized development and deployment environment.
 
 ## Table of contents
-[1.Prerequisites](#1-Prerequisites)
-[2.Quickstart](#2-Quickstart)
-[3.Usage](#Usage)
+- [1. Prerequisites](#Prerequisites)
+[2. Quickstart](#2-Quickstart)
+-[3.Usage](#Usage)
 * [4.Troubleshooting](#Troubleshooting)
 
 ## 1. Prerequisites
