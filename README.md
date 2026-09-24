@@ -4,12 +4,12 @@ This project containerizes a full-stack web application consisting of a `Django 
 The goal of this project is to provide a reproducible containerized development and deployment environment.
 
 ## Table of contents
-* [Prerequisites](#Prerequisites)
-* [Quickstart](#Quickstart)
-* [Usage](#Usage)
-* [Troubleshooting](#Troubleshooting)
+* [1.Prerequisites](#1-Prerequisites)
+* [2.Quickstart](#2-Quickstart)
+* [3.Usage](#Usage)
+* [4.Troubleshooting](#Troubleshooting)
 
-## Prerequisites
+## 1. Prerequisites
 To successfull set up this project the knowledge in following technologies and software is required:
 * Docker and dockerfile for building containers.
 * Docker compose for managing the containers.
@@ -17,12 +17,12 @@ To successfull set up this project the knowledge in following technologies and s
 * Django REST framework for the backend API.
 * PostgreSQL as the database
 
-## Quickstart
+## 2. Quickstart
 * Clone the repository:
 ```bash
 git clone <REPOSITORY_URL>
 ```
-cd Conduit-Container
+Change the working directory: `cd Conduit-Container`
 
 * Create the environment file
 
@@ -34,13 +34,12 @@ Copy-Item .env.example .env
 * Building the containers:
 
 This builds the specific frontend and backend images from the project`s own dockerfiles.
-
-cd /Conduit-Container/Frontend
 ```bash
+cd /Conduit-Container/Frontend
 docker build --tag frontend .
 ```
-cd /Conduit-Container/Backend
 ```bash
+cd /Conduit-Container/Backend
 docker build --tag backend .
 ```
 * Start the specific containers.
@@ -72,7 +71,7 @@ docker compose logs backend
 * Open the application in your browser:
  `http://SERVER_IP:8282`
 
-## Usage
+## 3. Usage
 
 This section describes how the application can be configured,started, modified and operated. 
 The frontend is available on `port 8282` of the host system. Nginx serves the angular application and forwards API requests to the backend container.
@@ -196,7 +195,7 @@ docker compose down -v
 After the containers are running the application can be accessed in the browser at:
 `htpp://<SERVER_IP>:8282`
 
-## Troubleshooting
+## 4. Troubleshooting
 * Frontend is not available.
 
 Check the container status and logs:
