@@ -80,7 +80,7 @@ The django backend runs with the gunicorn on `port 8000`.
 
 The ProgreSQL uses `port 5432` internally inside the docker network. It does not need to be exposed to the host because only the backend communicates directly with the database.
 
-* Environment configuration
+### Environment configuration
 
 Sensitive and environment-specific values are stored in `.env`. The repository contains  `.env.example` as a template.
 The following variables are used:
@@ -95,11 +95,11 @@ The following variables are used:
 ``DJANGO_DEBUG = enables or disables django debug mode``, 
 ``DJANGO_ALLOWED_HOSTS = hosts that django accepts``
 
-* Backend Dockerfile
+### Backend Dockerfile
 
 This file uses a `python 3.5` as base image, sets `/app` as working directory, copies and installs the project dependencies listed in `requirements.txt`. Copies the backend code, exposes `PORT: 8000` and starts `Gunicorn 20.1.0` with the django WSGI application.
 
-* Backend entrypoint.sh
+### Backend entrypoint.sh
 
 The backend container uses an `entrypoint.sh`script to prepare and start the django application.
 
@@ -108,7 +108,7 @@ The script performs the following steps when the container starts:
 - Check and create the superuser
 - Start the django application with `gunicorn`
 
-* Frontend Dockerfile
+### Frontend Dockerfile
 
 The frontend uses a multi-stage docker build.
 - In the first stage `Node.js 20` is used to install dependencies defined by `package-lock.json` and build the angular application.
@@ -118,7 +118,7 @@ npm run build
 ```
 - In the second stage, the compiled angular application is copied into the nginx alpine image. This multi-stage approach keeps the final image of frontend smaller because `Node.js` and the build dependencies are not required to serve the compiled application.
 
-* Nginx configuration
+### Nginx configuration
 
 Nginx performs two main taks:
 - The ``serve angular application``:
@@ -145,7 +145,7 @@ The API interceptor is found under: `/Frontend/src/app/core/interceptors/`.
 
 The frontend and backend images are built from the project`s own dockerfiles. The PostgreSQL uses the official postgreSQL image.
 
-* Database persistence
+### Database persistence
 
 PostgreSQL uses a named Docker volume:
 ```bash
@@ -155,7 +155,7 @@ volumes:
 This ensures that database data is stored outside the temporary database container.
 The data therefore remains available when the containers are removed and recreated, as long as the named volume is not deleted.
 
-* rebuilding after modifications
+### rebuilding after modifications
 
 After making modifications, the affected image needs to be rebuilt.
 
