@@ -5,9 +5,9 @@ The goal of this project is to provide a reproducible containerized development 
 
 ## Table of contents
 - [1. Prerequisites](#Prerequisites)
-[2. Quickstart](#2-Quickstart)
--[3.Usage](#Usage)
-* [4.Troubleshooting](#Troubleshooting)
+- [2. Quickstart](#2-Quickstart)
+- [3. Usage](#Usage)
+- [4. Troubleshooting](#Troubleshooting)
 
 ## 1. Prerequisites
 To successfull set up this project the knowledge in following technologies and software is required:
