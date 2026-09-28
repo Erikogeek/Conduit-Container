@@ -84,15 +84,23 @@ The ProgreSQL uses `port 5432` internally inside the docker network. It does not
 Sensitive and environment-specific values are stored in `.env`. The repository contains  `.env.example` as a template.
 The following variables are used:
 
-`POSTGRES_DB = Name of the postgreSQL database`, 
-``POSTGRES_USER = database user ``, 
-``POSTGRES_PASSWORD = database password``, 
-``POSTGRES_HOST = database hostname inside docker ``, 
-``POSTGRES_PORT = postgreSQL port``
-
-``DJANGO_SECRET_KEY = secret key used by django``, 
-``DJANGO_DEBUG = enables or disables django debug mode``, 
-``DJANGO_ALLOWED_HOSTS = hosts that django accepts``
+| `variables` | `values` |
+| -------- | ------ |
+| POSTGRES_DB | Name of the postgreSQL database |
+| -------- || ------ |
+| POSTGRES_USER | database user |
+| -------- || ------ |
+| POSTGRES_PASSWORD | database password |
+| -------- || ------ |
+| POSTGRES_HOST | database hostname inside docker |
+| -------- || ------ |
+| POSTGRES_PORT | postgreSQL port |
+| -------- || ------ |
+| DJANGO_SECRET_KEY| secret key used by django|
+| -------- || ------ |
+| DJANGO_DEBUG | enables or disables django debug mode |
+| -------- || ------ |
+| DJANGO_ALLOWED_HOSTS| hosts that django accepts|
 
 ### Backend Dockerfile
 
