@@ -36,16 +36,16 @@ Copy-Item .env.example .env
 This builds the specific frontend and backend images from the project`s own dockerfiles.
 ```bash
 cd /Conduit-Container/Frontend
-docker build --tag frontend .
+docker build --tag conduit-frontend .
 ```
 ```bash
 cd /Conduit-Container/Backend
-docker build --tag backend .
+docker build --tag conduit-backend .
 ```
 * Start the specific containers.
 ```bash
-docker run --rm -p 8282:80 frontend
-docker run --rm -p 8001:8000 backend
+docker run --rm -p 8282:80 conduit-frontend
+docker run --rm -p 8001:8000 conduit-backend
 ```
 * Build the images using Docker-compose
 ```bash
