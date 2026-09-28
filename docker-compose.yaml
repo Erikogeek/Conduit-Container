@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: frontend
+    image: conduit-frontend
     build:
       context: ./Frontend
     ports:
@@ -10,10 +10,9 @@ services:
     restart: unless-stopped
     
   backend:
-    image: backend
+    image: conduit-backend
     build:
       context: ./Backend
-    
     env_file:
       - .env
     ports:
