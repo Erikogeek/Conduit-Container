@@ -134,10 +134,6 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 proxy_set_header X-Forwarded-Proto $scheme; 
             }
 ```
-The `Angular API interceptor` was changed to use the same-origin API path:
-
-`const apiReq = req.clone({ url: `/api${req.url}` });`
-
 Nginx receives these requests and forwards to django.
 
 The API interceptor is found under: `/Frontend/src/app/core/interceptors/`.
