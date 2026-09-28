@@ -124,7 +124,7 @@ Nginx performs two main taks:
 The requests for the frontend are served from `/usr/share/nginx/html`.
 - The `Forward API requests`: Beginning with `/api/`are forwarded to the backend.
 
-```bash
+```nginx.conf
 location /api/ { 
 proxy_pass http://backend:8000; 
 proxy_http_version 1.1; 
